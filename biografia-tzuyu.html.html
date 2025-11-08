@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tzuyu - TWICE</title>
+  <style>
+    :root {
+      --main-color: #7EC8E3;
+      --hover-color: #5BA6C5;
+      --text-highlight: #255E78;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--main-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+      max-width: 800px;
+      width: 90%;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--text-highlight);
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .details strong {
+      color: var(--text-highlight);
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: var(--text-highlight);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <button
+  onclick="window.location.href='pweb.html'"
+  style="
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#777'"
+  onmouseout="this.style.backgroundColor='#555'"
+>
+  ← Volver al inicio
+</button>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/736x/89/64/a8/8964a845fa0fcb3698f178472047175b.jpg" alt="Tzuyu" />
+    
+    <div class="info">
+      <div class="name">Tzuyu</div>
+      <div class="position">Visual | Bailarina | Vocalista | TWICE</div>
+
+      <div class="details">
+        <p><strong>Nombre real:</strong> Chou Tzuyu (周子瑜)</p>
+        <p><strong>Fecha de nacimiento:</strong> 14 de junio de 1999</p>
+        <p><strong>Lugar de nacimiento:</strong> Tainan, Taiwán</p>
+        <p><strong>Estatura:</strong> 1.72 m</p>
+        <p><strong>Grupo sanguíneo:</strong> A</p>
+        <p><strong>Agencia:</strong> JYP Entertainment</p>
+        <p><strong>Debut con TWICE:</strong> 20 de octubre de 2015</p>
+      </div>
+
+      <button class="btn" onclick="toggleMoreInfo()">Ver más información</button>
+
+      <div class="more-info" id="moreInfo">
+        <h3>Trayectoria</h3>
+        <p>
+          Tzuyu es la maknae (la más joven) del grupo y la representante taiwanesa. Fue descubierta en un evento de baile y entrenó varios años antes de debutar con TWICE tras el programa <em>Sixteen</em>.
+        </p>
+
+        <h3>Estilo y personalidad</h3>
+        <p>
+          Es conocida por su elegancia, porte y habilidades para la danza. Su belleza natural la convirtió en la visual del grupo y un ícono entre fans.
+        </p>
+
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Es la integrante más alta del grupo.</li>
+          <li>Habla mandarín, coreano e inglés básico.</li>
+          <li>Es muy cercana a sus compañeras y conocida por su carácter amable y tímido.</li>
+          <li>Su fruta favorita es la sandía.</li>
+          <li>Ha sido embajadora de diversas marcas y eventos en Asia.</li>
+        </ul>
+
+        <h3>Enlaces</h3>
+        <p>
+          <a href="https://www.youtube.com/watch?v=IIrCrGAX03Y&list=RDIIrCrGAX03Y&start_radio=1" target="_blank">Solo de Tzuyu</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMoreInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".btn");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Ver más información";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Ocultar información";
+      }
+    }
+  </script>
+
+</body>
+</html>

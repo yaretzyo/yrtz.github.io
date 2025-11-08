@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mina - TWICE</title>
+  <style>
+    :root {
+      --main-color: #B2F7EF;
+      --hover-color: #8CE6DB;
+      --text-highlight: #008B8B;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--main-color);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--text-highlight);
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .details strong {
+      color: var(--text-highlight);
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: var(--text-highlight);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <button
+  onclick="window.location.href='pweb.html'"
+  style="
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#777'"
+  onmouseout="this.style.backgroundColor='#555'"
+>
+  ← Volver al inicio
+</button>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/736x/0c/70/e9/0c70e92e3de682dfde82a8f988fbef2b.jpg" alt="Mina">
+    
+    <div class="info">
+      <div class="name">Mina</div>
+      <div class="position">Vocalista | Bailarina Principal | TWICE</div>
+
+      <div class="details">
+        <p><strong>Nombre real:</strong> Myoui Mina (名井 南)</p>
+        <p><strong>Fecha de nacimiento:</strong> 24 de marzo de 1997</p>
+        <p><strong>Lugar de nacimiento:</strong> San Antonio, Texas, EE.UU. / Criada en Osaka, Japón</p>
+        <p><strong>Estatura:</strong> 1.63 m</p>
+        <p><strong>Grupo sanguíneo:</strong> A</p>
+        <p><strong>Agencia:</strong> JYP Entertainment</p>
+        <p><strong>Debut con TWICE:</strong> 20 de octubre de 2015</p>
+      </div>
+
+      <button class="btn" onclick="toggleMoreInfo()">Ver más información</button>
+
+      <div class="more-info" id="moreInfo">
+        <h3>Trayectoria</h3>
+        <p>
+          Mina se formó en ballet clásico durante más de 10 años antes de convertirse en idol. Fue descubierta por JYP mientras
+          compraba con su madre en Japón. Se mudó a Corea del Sur en 2014 y participó en el programa <em>Sixteen</em>,
+          siendo seleccionada como una de las 9 integrantes de TWICE.
+        </p>
+
+        <h3>Estilo y personalidad</h3>
+        <p>
+          Es conocida por su presencia escénica elegante y su voz suave y melódica. Aunque tímida, Mina se ha ganado
+          el cariño de ONCEs por su dulzura y determinación.
+        </p>
+
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Nació en EE.UU., pero se considera japonesa.</li>
+          <li>Es una excelente bailarina de ballet y lo ha mostrado en conciertos y especiales.</li>
+          <li>Tomó una pausa en 2019 por ansiedad, pero volvió con fuerza al grupo.</li>
+          <li>Es fan del helado de menta con chocolate y de los pingüinos.</li>
+          <li>Es una de las miembros más calmadas y tranquilas del grupo.</li>
+        </ul>
+
+        <h3>Enlaces</h3>
+        <p>
+         <a href="https://www.youtube.com/watch?v=wkXE4-VpSec&list=RDwkXE4-VpSec&start_radio=1" target="_blank">Canción en solitario de su sub-unidad (MISAMO)</sub-unidad></a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMoreInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".btn");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Ver más información";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Ocultar información";
+      }
+    }
+  </script>
+
+</body>
+</html>

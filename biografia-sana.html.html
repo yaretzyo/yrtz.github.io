@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sana - TWICE</title>
+  <style>
+    :root {
+      --main-color: #D5AAFF; 
+      --hover-color: #B88EFF;
+      --text-highlight: #6A3FA0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--main-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--text-highlight);
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .details strong {
+      color: var(--text-highlight);
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: var(--text-highlight);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <button
+  onclick="window.location.href='pweb.html'"
+  style="
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#777'"
+  onmouseout="this.style.backgroundColor='#555'"
+>
+  ← Volver al inicio
+</button>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/736x/15/8a/34/158a34e12ae40a6a8f273dbe07a97a7a.jpg" alt="Sana" />
+    
+    <div class="info">
+      <div class="name">Sana</div>
+      <div class="position">Vocalista | Bailarina | TWICE</div>
+
+      <div class="details">
+        <p><strong>Nombre real:</strong> Minatozaki Sana (湊崎 紗夏)</p>
+        <p><strong>Fecha de nacimiento:</strong> 29 de diciembre de 1996</p>
+        <p><strong>Lugar de nacimiento:</strong> Osaka, Japón</p>
+        <p><strong>Estatura:</strong> 1.62 m</p>
+        <p><strong>Grupo sanguíneo:</strong> A</p>
+        <p><strong>Agencia:</strong> JYP Entertainment</p>
+        <p><strong>Debut con TWICE:</strong> 20 de octubre de 2015</p>
+      </div>
+
+      <button class="btn" onclick="toggleMoreInfo()">Ver más información</button>
+
+      <div class="more-info" id="moreInfo">
+        <h3>Trayectoria</h3>
+        <p>
+          Sana entrenó durante casi 3 años en JYP Entertainment antes de debutar. Participó en el programa <em>Sixteen</em>, 
+          donde mostró su carisma y habilidades para el baile. Es conocida por su “aegyo” encantador que ha conquistado a fans de todo el mundo.
+        </p>
+
+        <h3>Personalidad y estilo</h3>
+        <p>
+          Es muy alegre, juguetona y posee una energía contagiosa. Su personalidad dulce y expresiva la ha convertido en una de las favoritas del grupo y el público.
+        </p>
+
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Antes de su debut, hizo un cover viral de “TT” que llamó la atención de los fans.</li>
+          <li>Su famoso “shy shy shy” en “Cheer Up” es uno de los momentos icónicos de TWICE.</li>
+          <li>Es fanática del anime y la cultura japonesa.</li>
+          <li>Le encanta cocinar y a menudo comparte recetas con sus fans.</li>
+          <li>Habla japonés, coreano e inglés básico.</li>
+        </ul>
+
+        <h3>Enlaces</h3>
+        <p>
+          <a href="https://www.youtube.com/watch?v=KeVK8bQzhPc&list=RDKeVK8bQzhPc&start_radio=1" target="_blank">Canción en solitario en su sub-unidad (MISAMO)</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMoreInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".btn");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Ver más información";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Ocultar información";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jeongyeon - TWICE</title>
+  <style>
+    :root {
+      --main-color: #B9FBC0; /* Verde menta */
+      --hover-color: #84D9A8;
+      --text-highlight: #008060;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--main-color);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--text-highlight);
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .details strong {
+      color: var(--text-highlight);
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: var(--text-highlight);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<button
+  onclick="window.location.href='pweb.html'"
+  style="
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#777'"
+  onmouseout="this.style.backgroundColor='#555'"
+>
+  ← Volver al inicio
+</button>
+
+  <div class="card">
+    <img src="https://dbkpop.com/wp-content/uploads/2022/08/twice_between_1__2_teaser_photo_1_jeongyeon.jpg" alt="Jeongyeon">
+    
+    <div class="info">
+      <div class="name">Jeongyeon</div>
+      <div class="position">Vocalista Líder | TWICE</div>
+
+      <div class="details">
+        <p><strong>Nombre real:</strong> Yoo Jeong-yeon (유정연)</p>
+        <p><strong>Fecha de nacimiento:</strong> 1 de noviembre de 1996</p>
+        <p><strong>Lugar de nacimiento:</strong> Suwon, Corea del Sur</p>
+        <p><strong>Estatura:</strong> 1.69 m</p>
+        <p><strong>Grupo sanguíneo:</strong> O</p>
+        <p><strong>Agencia:</strong> JYP Entertainment</p>
+        <p><strong>Debut con TWICE:</strong> 20 de octubre de 2015</p>
+      </div>
+
+      <button class="btn" onclick="toggleMoreInfo()">Ver más información</button>
+
+      <div class="more-info" id="moreInfo">
+        <h3>Trayectoria</h3>
+        <p>
+          Jeongyeon fue trainee de JYP por varios años antes de su debut. Participó en <em>Sixteen</em>, el programa de supervivencia
+          que formó a TWICE, donde destacó por su talento vocal, carisma natural y estilo andrógino.
+        </p>
+        <p>
+          En el grupo, es conocida por su voz sólida, su carácter tranquilo y su fuerte ética de trabajo.
+        </p>
+
+        <h3>Salud y regreso</h3>
+        <p>
+          En 2020 y 2021, Jeongyeon se tomó pausas temporales debido a problemas de salud mental (ansiedad y pánico),
+          pero regresó con fuerza para continuar su carrera con TWICE, mostrando gran valentía y resiliencia.
+        </p>
+
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Su hermana mayor es Gong Seung-yeon, una actriz coreana muy conocida.</li>
+          <li>Es una de las integrantes más graciosas según las demás miembros.</li>
+          <li>Le encantan los animales, especialmente los perros. Tiene una perrita llamada Nanan.</li>
+          <li>Originalmente se llamaba Yoo Kyung-wan, pero lo cambió legalmente a Jeong-yeon en su niñez.</li>
+          <li>Es conocida por ser muy cuidadosa y protectora con las demás miembros.</li>
+        </ul>
+
+        <h3>Redes y Enlaces</h3>
+        <p>
+          <a href="https://www.youtube.com/watch?v=jpqRO_S81EI" target="_blank">Solo stage de Jeongyeon</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMoreInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".btn");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Ver más información";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Ocultar información";
+      }
+    }
+  </script>
+
+</body>
+</html>

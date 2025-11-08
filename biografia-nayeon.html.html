@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nayeon - TWICE</title>
+  <style>
+    :root {
+      --main-color: #AEE4FF;
+      --hover-color: #70C9F4;
+      --text-highlight: #0096c7;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--main-color);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--text-highlight);
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .details strong {
+      color: var(--text-highlight);
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: var(--text-highlight);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <button
+  onclick="window.location.href='pweb.html'"
+  style="
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#777'"
+  onmouseout="this.style.backgroundColor='#555'"
+>
+  ← Volver al inicio
+</button>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/736x/c7/e9/9a/c7e99ad139001a0378f3d055547ceb92.jpg" alt="Nayeon">
+    
+    <div class="info">
+      <div class="name">Nayeon</div>
+      <div class="position">Vocalista Principal | Centro | Cara del Grupo</div>
+
+      <div class="details">
+        <p><strong>Nombre real:</strong> Im Na-yeon (임나연)</p>
+        <p><strong>Fecha de nacimiento:</strong> 22 de septiembre de 1995</p>
+        <p><strong>Lugar de nacimiento:</strong> Seúl, Corea del Sur</p>
+        <p><strong>Estatura:</strong> 1.63 m</p>
+        <p><strong>Grupo sanguíneo:</strong> A</p>
+        <p><strong>Agencia:</strong> JYP Entertainment</p>
+        <p><strong>Debut con TWICE:</strong> 20 de octubre de 2015</p>
+      </div>
+
+      <button class="btn" onclick="toggleMoreInfo()">Ver más información</button>
+
+      <div class="more-info" id="moreInfo">
+        <h3>Trayectoria</h3>
+        <p>
+          Nayeon fue seleccionada por JYP Entertainment tras una audición secreta cuando era adolescente. En 2015,
+          participó en el reality show <em>Sixteen</em>, donde fue seleccionada como la primera miembro oficial de TWICE.
+          Desde el principio fue reconocida por su voz brillante, su simpatía y su energía en el escenario.
+        </p>
+
+        <h3>Debut como solista</h3>
+        <p>
+          El 24 de junio de 2022, Nayeon debutó como solista con su mini-álbum <strong>IM NAYEON</strong>. La canción principal,
+          <em>POP!</em>, fue un gran éxito y demostró su versatilidad como artista individual. Fue la primera integrante de TWICE
+          en debutar oficialmente como solista.
+        </p>
+
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Es fan declarada de IU.</li>
+          <li>Le encantan los dulces y la comida coreana tradicional.</li>
+          <li>Tiene una personalidad muy juguetona y cálida, lo que la hace muy cercana a los fans.</li>
+          <li>Su apodo en el grupo es "Bunny Nayeon" por sus dientes frontales y ternura.</li>
+          <li>Participó en varios videos musicales antes de debutar (por ejemplo, en "No Love" de Jun.K).</li>
+        </ul>
+
+        <h3>Redes y Enlaces</h3>
+        <p>
+        <a href="https://www.youtube.com/watch?v=f6YDKF0LVWw" target="_blank">Solo de Nayeon</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMoreInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".btn");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Ver más información";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Ocultar información";
+      }
+    }
+  </script>
+
+</body>
+</html>

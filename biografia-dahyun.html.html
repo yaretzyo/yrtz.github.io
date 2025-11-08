@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dahyun - TWICE</title>
+  <style>
+    :root {
+      --main-color: #ffffff;
+      --hover-color: #e0e0e0;
+      --text-highlight: #444444;
+      --accent-color: #f0f0f0;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--accent-color);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: var(--main-color);
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid var(--accent-color);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--text-highlight);
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 1.1em;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .details strong {
+      color: var(--text-highlight);
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: var(--text-highlight);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+      color: #000;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<button
+  onclick="window.location.href='pweb.html'"
+  style="
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#777'"
+  onmouseout="this.style.backgroundColor='#555'"
+>
+  ← Volver al inicio
+</button>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/736x/aa/86/c2/aa86c220611f436cf54827f532b9fb9c.jpg" alt="Dahyun">
+    
+    <div class="info">
+      <div class="name">Dahyun</div>
+      <div class="position">Rapera Líder | Vocalista | TWICE</div>
+
+      <div class="details">
+        <p><strong>Nombre real:</strong> Kim Da-hyun (김다현)</p>
+        <p><strong>Fecha de nacimiento:</strong> 28 de mayo de 1998</p>
+        <p><strong>Lugar de nacimiento:</strong> Seongnam, Corea del Sur</p>
+        <p><strong>Estatura:</strong> 1.65 m</p>
+        <p><strong>Grupo sanguíneo:</strong> O</p>
+        <p><strong>Agencia:</strong> JYP Entertainment</p>
+        <p><strong>Debut con TWICE:</strong> 20 de octubre de 2015</p>
+      </div>
+
+      <button class="btn" onclick="toggleMoreInfo()">Ver más información</button>
+
+      <div class="more-info" id="moreInfo">
+        <h3>Trayectoria</h3>
+        <p>
+          Dahyun se volvió viral antes de debutar gracias a su famoso <strong>"Eagle Dance"</strong> en una competencia escolar.
+          Esto llamó la atención de JYP, donde fue aceptada como trainee en 2012. Se convirtió en una de las integrantes
+          más destacadas de <em>Sixteen</em> y fue seleccionada para TWICE.
+        </p>
+
+        <h3>Carácter y estilo</h3>
+        <p>
+          Es conocida por su personalidad brillante, humor único y gran presencia en variedad shows. Como rapera,
+          combina carisma, energía y expresión escénica impecable.
+        </p>
+
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Es muy religiosa; asiste regularmente a la iglesia.</li>
+          <li>Su apodo es "Tofu" por su piel blanca.</li>
+          <li>Siempre tiene una cámara instantánea o de fotos en los viajes.</li>
+          <li>Le encanta tocar el piano.</li>
+          <li>Ha sido MC en programas como <em>Music Core</em>.</li>
+        </ul>
+
+        <h3>Enlaces</h3>
+        <p>
+          <a href="https://www.youtube.com/watch?v=MjIOaB4VKag&list=RDMjIOaB4VKag&start_radio=1" target="_blank">Solo stage de Dahyun</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMoreInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".btn");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Ver más información";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Ocultar información";
+      }
+    }
+  </script>
+
+</body>
+</html>

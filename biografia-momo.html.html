@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Momo - TWICE</title>
+  <style>
+    :root {
+      --main-color: #ffb2ec;
+      --hover-color: #ff7dc9;
+      --text-highlight: #e60073;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--main-color);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--text-highlight);
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .details strong {
+      color: var(--text-highlight);
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: var(--text-highlight);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <button
+  onclick="window.location.href='pweb.html'"
+  style="
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#777'"
+  onmouseout="this.style.backgroundColor='#555'"
+>
+  ← Volver al inicio
+</button>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/1200x/dd/50/e5/dd50e5452910240aef528df91c914072.jpg" alt="Momo">
+    
+    <div class="info">
+      <div class="name">Momo</div>
+      <div class="position">Bailarina Principal | Vocalista | Rapera</div>
+
+      <div class="details">
+        <p><strong>Nombre real:</strong> Hirai Momo (平井 もも)</p>
+        <p><strong>Fecha de nacimiento:</strong> 9 de noviembre de 1996</p>
+        <p><strong>Lugar de nacimiento:</strong> Kyōtanabe, Kioto, Japón</p>
+        <p><strong>Estatura:</strong> 1.67 m</p>
+        <p><strong>Grupo sanguíneo:</strong> A</p>
+        <p><strong>Agencia:</strong> JYP Entertainment</p>
+        <p><strong>Debut con TWICE:</strong> 20 de octubre de 2015</p>
+      </div>
+
+      <button class="btn" onclick="toggleMoreInfo()">Ver más información</button>
+
+      <div class="more-info" id="moreInfo">
+        <h3>Trayectoria</h3>
+        <p>
+          Momo fue descubierta por JYP Entertainment a través de un video de baile en YouTube junto a su hermana.
+          A pesar de haber sido eliminada en el programa <em>Sixteen</em>, fue seleccionada para TWICE por su talento
+          excepcional en el baile y su fuerte presencia escénica.
+        </p>
+
+        <h3>Estilo y reconocimiento</h3>
+        <p>
+          Es considerada una de las mejores bailarinas del K-pop. Su estilo de baile es preciso, enérgico y visualmente impresionante.
+          Ha ganado reconocimiento internacional por sus fancams virales.
+        </p>
+
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Le encantan los animales, especialmente los perros. Tiene uno llamado Boo.</li>
+          <li>Es fanática de la comida, especialmente el Jokbal (pata de cerdo coreana).</li>
+          <li>Entrenó en Corea durante más de 3 años antes de debutar.</li>
+          <li>Su nombre "Momo" significa "melocotón" en japonés, de ahí su color durazno.</li>
+          <li>Es una persona tímida fuera del escenario pero muy carismática al actuar.</li>
+        </ul>
+
+        <h3>Enlaces</h3>
+        <p>
+          <a href="https://www.youtube.com/watch?v=NFAi_mxlcXs&list=RDNFAi_mxlcXs&start_radio=1" target="_blank">Canción en solitario de su sub-unidad (MISAMO)</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMoreInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".btn");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Ver más información";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Ocultar información";
+      }
+    }
+  </script>
+
+</body>
+</html>

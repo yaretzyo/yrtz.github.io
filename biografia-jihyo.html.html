@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jihyo - TWICE</title>
+  <style>
+    :root {
+      --main-color: #ffc79a;
+      --hover-color: #ffc56f;
+      --text-highlight: #d67922;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--main-color);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      width: 90%;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card img {
+      width: 250px;
+      height: 350px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 4px solid var(--main-color);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .name {
+      font-size: 2em;
+      font-weight: bold;
+      color: var(--text-highlight);
+      margin-bottom: 5px;
+    }
+
+    .position {
+      font-size: 1.1em;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .details {
+      font-size: 1em;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .details strong {
+      color: var(--text-highlight);
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: var(--text-highlight);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card img {
+        width: 100%;
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <button
+  onclick="window.location.href='pweb.html'"
+  style="
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  "
+  onmouseover="this.style.backgroundColor='#777'"
+  onmouseout="this.style.backgroundColor='#555'"
+>
+  ← Volver al inicio
+</button>
+
+  <div class="card">
+    <img src="https://i.pinimg.com/736x/fc/58/85/fc5885bfc5c0d241fb7d1322f4eab740.jpg" alt="Jihyo">
+    
+    <div class="info">
+      <div class="name">Jihyo</div>
+      <div class="position">Líder | Vocalista Principal | TWICE</div>
+
+      <div class="details">
+        <p><strong>Nombre real:</strong> Park Ji-hyo (박지효)</p>
+        <p><strong>Fecha de nacimiento:</strong> 1 de febrero de 1997</p>
+        <p><strong>Lugar de nacimiento:</strong> Guri, Gyeonggi, Corea del Sur</p>
+        <p><strong>Estatura:</strong> 1.62 m</p>
+        <p><strong>Grupo sanguíneo:</strong> O</p>
+        <p><strong>Agencia:</strong> JYP Entertainment</p>
+        <p><strong>Debut con TWICE:</strong> 20 de octubre de 2015</p>
+      </div>
+
+      <button class="btn" onclick="toggleMoreInfo()">Ver más información</button>
+
+      <div class="more-info" id="moreInfo">
+        <h3>Trayectoria</h3>
+        <p>
+          Jihyo fue trainee de JYP durante más de 10 años antes de debutar. Comenzó su entrenamiento a los 8 años y es conocida por
+          su disciplina y perseverancia. Fue elegida como líder de TWICE por votación entre las miembros, lo que demuestra
+          el respeto que le tienen.
+        </p>
+
+        <h3>Debut como solista</h3>
+        <p>
+          En agosto de 2023, Jihyo debutó como solista con su álbum <strong>"ZONE"</strong>, que mostró su versatilidad vocal y
+          artística. La canción principal <em>"Killin' Me Good"</em> fue un éxito y recibió elogios por su madurez y estilo.
+        </p>
+
+        <h3>Curiosidades</h3>
+        <ul>
+          <li>Su nombre original era Park Ji-soo, pero lo cambió legalmente a Ji-hyo antes del debut.</li>
+          <li>Es fan de Beyoncé y Jessie J.</li>
+          <li>Es conocida como la "Diosa del Power Vocal" dentro de TWICE.</li>
+          <li>Le encanta hacer ejercicio y mantenerse en forma.</li>
+          <li>Sus expresiones faciales en el escenario son famosas por ser potentes y carismáticas.</li>
+        </ul>
+
+        <h3>Enlaces</h3>
+        <p>
+          <a href="https://www.youtube.com/watch?v=f6YDKF0LVWw" target="_blank">Solo de Jihyo</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMoreInfo() {
+      const info = document.getElementById("moreInfo");
+      const btn = document.querySelector(".btn");
+
+      if (info.style.display === "block") {
+        info.style.display = "none";
+        btn.textContent = "Ver más información";
+      } else {
+        info.style.display = "block";
+        btn.textContent = "Ocultar información";
+      }
+    }
+  </script>
+
+</body>
+</html>
